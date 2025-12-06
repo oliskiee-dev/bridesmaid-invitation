@@ -1,26 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FAFAFA;
+  --foreground: #2C2C2C;
+  --sage-green: #9CA986;
+  --olive-green: #7B8F6E;
+  --charcoal: #2C2C2C;
+  --off-white: #FAFAFA;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', -apple-system, sans-serif;
+}
+
+.font-script {
+  font-family: 'Alex Brush', cursive;
+  font-weight: 400;
+}
+
+.font-sans {
+  font-family: 'Montserrat', -apple-system, sans-serif;
+}
+
+.tracking-ultra {
+  letter-spacing: 0.25em;
+}
+
+.tracking-mega {
+  letter-spacing: 0.3em;
 }

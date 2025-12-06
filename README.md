@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💐 A Journey to the Aisle - Bridesmaid Invitation Website
 
-## Getting Started
+A beautiful, interactive Next.js website to ask someone special to be your bridesmaid!
 
-First, run the development server:
+## ✨ Features
+
+### 🌸 **Landing Page**
+- Romantic pastel gradient background
+- Floating petal animations
+- "Begin the Journey" button with smooth transitions
+
+### 📸 **Memory Lane**
+- Interactive timeline showcasing your relationship
+- Flip card animations revealing special moments and fun facts
+- Beautiful photo placeholders (customize with real photos!)
+
+### 🎮 **Role Quest Mini-Game**
+- **Dress Selection** - Choose a dress style
+- **Flower Matching** - Pick favorite flowers
+- **Balloon Popping** - Pop balloons to reveal words like "Love," "Laughter," "Support"
+- Unlocks the "Bridesmaid Role" achievement
+
+### 💌 **The Big Question**
+- Dramatic reveal with confetti animation
+- Beautiful card asking "Will you be my Bridesmaid?"
+- Smooth transitions and celebrations
+
+### 💖 **Personal Message**
+- Heartfelt message from the bride
+- Two response options with playful interactions
+
+### 🎁 **Bridesmaid Perks**
+- VIP access to wedding details
+- Unlimited hugs from the bride
+- Early access to dress inspiration
+- Photo opportunities & more!
+
+### 🎉 **Confirmation Page**
+- Thank you message
+- Downloadable bridesmaid badge
+- Live countdown to wedding day
+- Special heartfelt message
+
+## 🚀 Getting Started
 
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Customization Guide
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Update Wedding Date
+Edit `components/ConfirmationPage.tsx`:
+```typescript
+const weddingDate = new Date('2026-06-15T00:00:00'); // Change this!
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Customize Memories
+Edit `components/MemoryLane.tsx` to add your own memories and photos.
 
-## Learn More
+### Change Colors
+The site uses Tailwind CSS. Edit color classes in components:
+- Pink: `from-pink-400`, `bg-pink-50`
+- Purple: `from-purple-400`, `bg-purple-50`
+- Blue: `to-blue-50`
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+├── app/
+│   ├── layout.tsx          # Root layout with fonts
+│   ├── page.tsx            # Main page with section routing
+│   └── globals.css         # Global styles
+├── components/
+│   ├── LandingSection.tsx
+│   ├── MemoryLane.tsx
+│   ├── RoleQuest.tsx
+│   ├── BigQuestion.tsx
+│   ├── PersonalMessage.tsx
+│   ├── BridesmaidPerks.tsx
+│   ├── ConfirmationPage.tsx
+│   └── FloatingPetals.tsx
+└── public/                 # Add your photos here
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🌐 Deploy to Vercel
 
-## Deploy on Vercel
+1. Push code to GitHub
+2. Visit [vercel.com](https://vercel.com)
+3. Import repository
+4. Deploy!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You can add a custom domain like `beabridesmaid.com` in Vercel settings.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠️ Built With
+
+- **Next.js 16** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Framer Motion** - Animations
+- **Lucide React** - Icons
+
+## 💝 Tips
+
+1. Test on mobile devices
+2. Add personal photos to replace emojis
+3. Customize all messages
+4. Set the correct wedding date
+5. Share the link as a surprise!
+
+---
+
+Made with 💖 for an unforgettable bridesmaid proposal
