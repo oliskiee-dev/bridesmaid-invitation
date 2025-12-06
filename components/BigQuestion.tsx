@@ -21,56 +21,66 @@ export default function BigQuestion({ onReveal }: BigQuestionProps) {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6 sm:px-12 md:px-24 py-12 sm:py-20" style={{ backgroundColor: '#FAFAFA' }}>
+    <div className="min-h-screen flex flex-col items-center justify-center px-6 sm:px-12 md:px-24 py-12 sm:py-20 relative overflow-hidden">
+      {/* Decorative Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#F5EFE7] via-[#E8DCC4] to-[#F5EFE7]"></div>
+      <div className="absolute inset-0 opacity-10" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235D4037' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+      }}></div>
+      
       {showConfetti && <Confetti />}
       
       {!revealed ? (
         <motion.div
-          className="text-center space-y-12 sm:space-y-16 px-4"
+          className="text-center space-y-12 sm:space-y-16 px-4 relative z-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
           <motion.p
-            className="text-base sm:text-lg font-light tracking-wide"
-            style={{ color: '#2C2C2C' }}
+            className="text-lg sm:text-xl font-serif font-semibold"
+            style={{ color: '#3E2723' }}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Now comes the real reason you&apos;re here...
+            Okay, eto na yung totoo... 😏
           </motion.p>
 
           <motion.button
             onClick={handleReveal}
-            className="px-8 sm:px-16 py-3 sm:py-4 font-sans font-light text-xs sm:text-sm tracking-ultra uppercase transition-all duration-300 inline-flex items-center gap-2 sm:gap-3 touch-manipulation"
+            className="px-8 sm:px-16 py-3 sm:py-4 font-serif font-bold text-sm sm:text-base transition-all duration-300 inline-flex items-center gap-2 sm:gap-3 touch-manipulation"
             style={{ 
-              color: '#2C2C2C',
-              borderBottom: '1px solid #7B8F6E'
+              backgroundColor: '#5D4037',
+              color: '#F5EFE7',
+              border: '2px solid #D4AF37'
             }}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            whileHover={{ scale: 1.05, backgroundColor: '#6F4E37' }}
+            whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
             <Gift className="w-4 h-4 sm:w-5 sm:h-5" />
-            Reveal the Question
+            Buksan Mo Na! 🎁
           </motion.button>
         </motion.div>
       ) : (
         <motion.div
-          className="max-w-3xl w-full"
+          className="max-w-3xl w-full relative z-10"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7 }}
         >
           <motion.div
-            className="bg-white p-16 md:p-20 text-center"
-            style={{ borderLeft: '3px solid #7B8F6E' }}
+            className="textured-bg filipiniana-border p-12 sm:p-16 md:p-20 text-center relative rounded-2xl shadow-2xl"
+            style={{ backgroundColor: '#FFFFFF' }}
             initial={{ rotateY: 90 }}
             animate={{ rotateY: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <div className="absolute top-4 right-4 text-3xl" style={{ color: '#D4AF37' }}>✦</div>
+            <div className="absolute bottom-4 left-4 text-3xl" style={{ color: '#D4AF37' }}>✦</div>
+            
             <motion.div
               className="text-7xl mb-12"
               animate={{ rotate: [0, 5, -5, 0] }}
@@ -80,23 +90,29 @@ export default function BigQuestion({ onReveal }: BigQuestionProps) {
             </motion.div>
 
             <motion.h1
-              className="font-script text-5xl md:text-6xl mb-6"
-              style={{ color: '#7B8F6E' }}
+              className="font-script text-4xl sm:text-5xl md:text-6xl mb-6"
+              style={{ color: '#5D4037' }}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              Will you be my
+              Gusto kita maging
             </motion.h1>
             
+            <div className="flex gap-2 items-center justify-center mb-6">
+              <div className="w-12 h-px" style={{ backgroundColor: '#D4AF37' }} />
+              <div className="text-xl" style={{ color: '#D4AF37' }}>✦</div>
+              <div className="w-12 h-px" style={{ backgroundColor: '#D4AF37' }} />
+            </div>
+            
             <motion.h1
-              className="text-3xl md:text-4xl font-light tracking-ultra uppercase mb-8"
-              style={{ color: '#2C2C2C' }}
+              className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-8"
+              style={{ color: '#A0522D' }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.8 }}
             >
-              Bridesmaid?
+              BRIDESMAID KOOOO! 💕
             </motion.h1>
 
             <motion.div
@@ -119,7 +135,7 @@ function Confetti() {
     id: i,
     left: Math.random() * 100,
     delay: Math.random() * 0.3,
-    color: ['#7B8F6E', '#9CA986', '#B5C4A1'][Math.floor(Math.random() * 3)],
+    color: ['#D4AF37', '#A0522D', '#E8DCC4'][Math.floor(Math.random() * 3)],
   }));
 
   return (
