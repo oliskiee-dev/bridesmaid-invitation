@@ -2,9 +2,8 @@
 
 import { useState } from 'react';
 import LandingSection from '@/components/LandingSection';
-import MemoryLane from '@/components/MemoryLane';
 import FlowerGame from '@/components/FlowerGame';
-import RoleQuest from '@/components/RoleQuest';
+import FilipinianaTrivia from '@/components/FilipinianaTrivia';
 import BigQuestion from '@/components/BigQuestion';
 import PersonalMessage from '@/components/PersonalMessage';
 import BridesmaidPerks from '@/components/BridesmaidPerks';
@@ -22,35 +21,31 @@ export default function Home() {
       )}
       
       {currentSection === 1 && (
-        <MemoryLane onComplete={() => setCurrentSection(2)} />
+        <FlowerGame onComplete={() => setCurrentSection(2)} />
       )}
       
       {currentSection === 2 && (
-        <FlowerGame onComplete={() => setCurrentSection(3)} />
+        <FilipinianaTrivia onComplete={() => setCurrentSection(3)} />
       )}
       
       {currentSection === 3 && (
-        <RoleQuest onComplete={() => setCurrentSection(4)} />
+        <BigQuestion onReveal={() => setCurrentSection(4)} />
       )}
       
       {currentSection === 4 && (
-        <BigQuestion onReveal={() => setCurrentSection(5)} />
-      )}
-      
-      {currentSection === 5 && (
         <PersonalMessage 
           onAccept={() => {
             setHasAccepted(true);
-            setCurrentSection(6);
+            setCurrentSection(5);
           }} 
         />
       )}
       
-      {currentSection === 6 && hasAccepted && (
-        <BridesmaidPerks onContinue={() => setCurrentSection(7)} />
+      {currentSection === 5 && hasAccepted && (
+        <BridesmaidPerks onContinue={() => setCurrentSection(6)} />
       )}
       
-      {currentSection === 7 && (
+      {currentSection === 6 && (
         <ConfirmationPage />
       )}
     </main>

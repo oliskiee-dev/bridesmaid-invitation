@@ -15,20 +15,20 @@ const memories: Memory[] = [
   {
     id: 1,
     image: '🎉',
-    caption: 'The first time we laughed until we cried...',
-    funFact: 'You spilled coffee on yourself and still kept laughing!',
+    caption: 'Yung first time na tumawa tayo dahil sa benta mong joke...',
+    funFact: 'Nakalimutan ko na yung joke pero ang saya pa rin ng feeling! 😂',
   },
   {
     id: 2,
     image: '💪',
-    caption: 'The time you saved me from stress...',
-    funFact: 'Your pep talks are legendary!',
+    caption: 'Nung nag-breakdown ako at nandyan ka...',
+    funFact: 'Ang solid mo talaga! Walang katulad! 🫶',
   },
   {
     id: 3,
     image: '👯‍♀️',
-    caption: 'When we became sisters by heart...',
-    funFact: 'Best decision of my life!',
+    caption: 'Nung naging tayo na yung ultimate duo...',
+    funFact: 'Best decision ko na maging close tayo! 💕',
   },
 ];
 
@@ -55,17 +55,23 @@ export default function MemoryLane({ onComplete }: MemoryLaneProps) {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-12 md:px-24 py-20" style={{ backgroundColor: '#FAFAFA' }}>
+    <div className="min-h-screen flex flex-col items-center justify-center px-12 md:px-24 py-20 relative" style={{ backgroundColor: '#F5EFE7' }}>
+      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 text-5xl" style={{ color: '#D4AF37', opacity: 0.3 }}>🌺</div>
+      
       <motion.h2
-        className="font-script text-6xl md:text-7xl mb-8 text-center"
-        style={{ color: '#7B8F6E' }}
+        className="font-script text-6xl md:text-7xl mb-4 text-center"
+        style={{ color: '#5D4037' }}
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       >
-        Our Story
+        Throwback Muna!
       </motion.h2>
-      <div className="w-32 h-px mb-6" style={{ backgroundColor: '#9CA986' }} />
-      <p className="text-sm font-light tracking-ultra uppercase mb-16 text-center" style={{ color: '#2C2C2C' }}>Tap each card to reveal</p>
+      <div className="flex gap-2 items-center mb-6">
+        <div className="w-12 h-px" style={{ backgroundColor: '#D4AF37' }} />
+        <div className="text-xl" style={{ color: '#D4AF37' }}>✦</div>
+        <div className="w-12 h-px" style={{ backgroundColor: '#D4AF37' }} />
+      </div>
+      <p className="text-base font-serif font-medium mb-16 text-center" style={{ color: '#3E2723' }}>I-tap mo para makita yung memory! 🎴</p>
 
       <AnimatePresence mode="wait">
         <motion.div
@@ -87,12 +93,12 @@ export default function MemoryLane({ onComplete }: MemoryLaneProps) {
             >
               {/* Front */}
               <div className="absolute w-full h-full backface-hidden">
-                <div className="w-full h-full bg-white p-12 flex flex-col items-center justify-center" style={{ border: '1px solid #E5E5E5' }}>
+                <div className="w-full h-full textured-bg p-12 flex flex-col items-center justify-center" style={{ backgroundColor: '#FFFFFF', border: '3px solid #D4AF37' }}>
                   <div className="text-7xl mb-8">{memories[currentIndex].image}</div>
-                  <p className="text-lg text-center font-light leading-relaxed" style={{ color: '#2C2C2C' }}>
+                  <p className="text-lg text-center font-serif font-medium leading-relaxed" style={{ color: '#3E2723' }}>
                     {memories[currentIndex].caption}
                   </p>
-                  <p className="text-xs font-light tracking-ultra uppercase mt-6" style={{ color: '#9CA986' }}>Tap to reveal</p>
+                  <p className="text-sm font-serif mt-6" style={{ color: '#A0522D' }}>👆 I-tap mo!</p>
                 </div>
               </div>
 
@@ -101,9 +107,9 @@ export default function MemoryLane({ onComplete }: MemoryLaneProps) {
                 className="absolute w-full h-full backface-hidden"
                 style={{ transform: 'rotateY(180deg)' }}
               >
-                <div className="w-full h-full bg-white p-12 flex flex-col items-center justify-center" style={{ borderLeft: '3px solid #7B8F6E' }}>
-                  <Heart className="w-12 h-12 mb-8" style={{ color: '#7B8F6E' }} />
-                  <p className="text-lg text-center font-light leading-relaxed" style={{ color: '#2C2C2C' }}>
+                <div className="w-full h-full textured-bg p-12 flex flex-col items-center justify-center" style={{ backgroundColor: '#5D4037', borderLeft: '4px solid #D4AF37' }}>
+                  <Heart className="w-12 h-12 mb-8" style={{ color: '#D4AF37' }} />
+                  <p className="text-lg text-center font-serif font-medium leading-relaxed" style={{ color: '#F5EFE7' }}>
                     {memories[currentIndex].funFact}
                   </p>
                 </div>
@@ -115,27 +121,30 @@ export default function MemoryLane({ onComplete }: MemoryLaneProps) {
 
       <motion.button
         onClick={handleNext}
-        className="mt-12 px-12 py-3 font-sans font-light text-sm tracking-ultra uppercase transition-all duration-300"
+        className="mt-12 px-10 sm:px-12 py-3 font-serif font-semibold text-sm transition-all duration-300"
         style={{ 
-          color: '#2C2C2C',
-          borderBottom: '1px solid #7B8F6E'
+          backgroundColor: '#5D4037',
+          color: '#F5EFE7',
+          border: '2px solid #D4AF37'
         }}
         whileHover={{ 
-          borderBottomWidth: '2px',
-          letterSpacing: '0.3em'
+          backgroundColor: '#6F4E37',
+          scale: 1.05
         }}
+        whileTap={{ scale: 0.95 }}
       >
-        {currentIndex < memories.length - 1 ? 'Next' : 'Continue'}
+        {currentIndex < memories.length - 1 ? 'Next ➜' : 'Continue ➜'}
       </motion.button>
 
       <div className="flex gap-3 mt-8">
         {memories.map((_, idx) => (
           <div
             key={idx}
-            className="h-px transition-all"
+            className="h-1 transition-all rounded-full"
             style={{
-              backgroundColor: idx === currentIndex ? '#7B8F6E' : '#D1D5DB',
-              width: idx === currentIndex ? '32px' : '8px'
+              backgroundColor: idx === currentIndex ? '#D4AF37' : '#A0522D',
+              width: idx === currentIndex ? '32px' : '8px',
+              opacity: idx === currentIndex ? 1 : 0.3
             }}
           />
         ))}

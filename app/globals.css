@@ -1,13 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #FAFAFA;
-  --foreground: #2C2C2C;
-  --sage-green: #9CA986;
-  --olive-green: #7B8F6E;
-  --charcoal: #2C2C2C;
-  --off-white: #FAFAFA;
+  /* Filipiniana Brown Theme */
+  --background: #F5EFE7;
+  --foreground: #3E2723;
+  --primary-brown: #5D4037;
+  --dark-brown: #3E2723;
+  --terracotta: #A0522D;
+  --cream: #F5EFE7;
+  --gold: #D4AF37;
+  --warm-beige: #E8DCC4;
+  --mahogany: #6F4E37;
 }
 
 @theme inline {
@@ -20,6 +24,30 @@ body {
   color: var(--foreground);
   font-family: 'Montserrat', -apple-system, sans-serif;
   -webkit-tap-highlight-color: transparent;
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(109, 78, 55, 0.02) 2px,
+      rgba(109, 78, 55, 0.02) 4px
+    );
+}
+
+/* Filipiniana decorative border */
+.filipiniana-border {
+  border-image: repeating-linear-gradient(
+    90deg,
+    #6F4E37 0px,
+    #6F4E37 10px,
+    transparent 10px,
+    transparent 20px
+  ) 1;
+}
+
+/* Textured background for cards */
+.textured-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236F4E37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* Improve touch interactions */
@@ -36,6 +64,10 @@ button, .touch-none {
 .font-script {
   font-family: 'Alex Brush', cursive;
   font-weight: 400;
+}
+
+.font-serif {
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .font-sans {

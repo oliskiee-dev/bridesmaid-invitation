@@ -114,42 +114,48 @@ export default function FlowerGame({ onComplete }: FlowerGameProps) {
   return (
     <div 
       className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 py-8 sm:py-12 relative overflow-hidden touch-none"
-      style={{ backgroundColor: '#FAFAFA' }}
+      style={{ backgroundColor: '#F5EFE7' }}
     >
       {!gameStarted ? (
         <motion.div
-          className="text-center z-10 max-w-md"
+          className="text-center z-10 max-w-md relative"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
         >
+          <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 text-4xl" style={{ color: '#D4AF37' }}>✦</div>
+          
           <motion.h2
             className="font-script text-5xl sm:text-6xl md:text-7xl mb-6"
-            style={{ color: '#7B8F6E' }}
+            style={{ color: '#5D4037' }}
           >
-            Flower Catcher
+            Bulaklak Hunt! 🌸
           </motion.h2>
-          <div className="w-24 sm:w-32 h-px mx-auto mb-6 sm:mb-8" style={{ backgroundColor: '#9CA986' }} />
-          <p className="text-sm sm:text-base font-light mb-3 sm:mb-4 px-4" style={{ color: '#2C2C2C' }}>
-            Move your finger or mouse to catch falling flowers!
+          <div className="flex gap-2 items-center justify-center mb-6 sm:mb-8">
+            <div className="w-8 h-px" style={{ backgroundColor: '#D4AF37' }} />
+            <div className="text-lg" style={{ color: '#D4AF37' }}>✦</div>
+            <div className="w-8 h-px" style={{ backgroundColor: '#D4AF37' }} />
+          </div>
+          <p className="text-sm sm:text-base font-serif font-medium mb-3 sm:mb-4 px-4" style={{ color: '#3E2723' }}>
+            Galaw-galaw lang yung daliri mo para mahuli ang bulaklak! 💐
           </p>
-          <p className="text-xs sm:text-sm font-light mb-8 sm:mb-12" style={{ color: '#7B8F6E' }}>
-            Collect {targetScore} flowers to continue
+          <p className="text-xs sm:text-sm font-serif font-semibold mb-8 sm:mb-12" style={{ color: '#A0522D' }}>
+            Kailangan mo ng {targetScore} bulaklak para mag-continue!
           </p>
           <motion.button
             onClick={() => setGameStarted(true)}
-            className="px-8 sm:px-12 py-3 sm:py-4 font-sans font-light text-xs sm:text-sm tracking-ultra uppercase bg-white transition-all duration-300 touch-manipulation"
+            className="px-8 sm:px-12 py-3 sm:py-4 font-serif font-bold text-sm sm:text-base transition-all duration-300 touch-manipulation"
             style={{ 
-              border: '1px solid #7B8F6E',
-              color: '#2C2C2C'
+              backgroundColor: '#5D4037',
+              color: '#F5EFE7',
+              border: '2px solid #D4AF37'
             }}
             whileHover={{ 
-              backgroundColor: '#7B8F6E',
-              color: '#FFFFFF',
+              backgroundColor: '#6F4E37',
               scale: 1.05
             }}
             whileTap={{ scale: 0.95 }}
           >
-            Start Game
+            Sige, Laro Na! 🎮
           </motion.button>
         </motion.div>
       ) : (
@@ -160,11 +166,11 @@ export default function FlowerGame({ onComplete }: FlowerGameProps) {
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
           >
-            <div className="text-center">
-              <p className="text-xs sm:text-sm font-light tracking-ultra uppercase mb-1 sm:mb-2" style={{ color: '#2C2C2C' }}>
-                Flowers Collected
+            <div className="text-center bg-white/90 px-6 py-3 rounded-lg" style={{ border: '2px solid #D4AF37' }}>
+              <p className="text-xs sm:text-sm font-serif font-bold mb-1 sm:mb-2" style={{ color: '#3E2723' }}>
+                Bulaklak Score 🌸
               </p>
-              <p className="font-script text-4xl sm:text-5xl" style={{ color: '#7B8F6E' }}>
+              <p className="font-script text-4xl sm:text-5xl" style={{ color: '#5D4037' }}>
                 {score} / {targetScore}
               </p>
             </div>
@@ -225,11 +231,11 @@ export default function FlowerGame({ onComplete }: FlowerGameProps) {
                 >
                   🎉
                 </motion.div>
-                <h3 className="font-script text-6xl mb-4" style={{ color: '#7B8F6E' }}>
-                  Perfect Catch!
+                <h3 className="font-script text-5xl sm:text-6xl mb-4" style={{ color: '#5D4037' }}>
+                  Ang Galing Mo!
                 </h3>
-                <p className="text-sm font-light tracking-ultra uppercase" style={{ color: '#2C2C2C' }}>
-                  You collected all the flowers!
+                <p className="text-base sm:text-lg font-serif font-bold" style={{ color: '#A0522D' }}>
+                  Nakuha mo lahat ng bulaklak! 💐
                 </p>
               </div>
             </motion.div>

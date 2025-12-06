@@ -17,9 +17,9 @@ export default function RoleQuest({ onComplete }: RoleQuestProps) {
   const dresses = ['👗', '💃', '👰'];
   const flowers = ['🌸', '🌹', '💐'];
   const balloons = [
-    { id: 1, word: 'Love', color: '#7B8F6E' },
-    { id: 2, word: 'Laughter', color: '#9CA986' },
-    { id: 3, word: 'Support', color: '#B5C4A1' },
+    { id: 1, word: 'Pag-ibig', color: '#5D4037' },
+    { id: 2, word: 'Tawanan', color: '#6F4E37' },
+    { id: 3, word: 'Suporta', color: '#A0522D' },
   ];
 
   const handleDressSelect = (index: number) => {
@@ -42,17 +42,23 @@ export default function RoleQuest({ onComplete }: RoleQuestProps) {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-12 md:px-24 py-20" style={{ backgroundColor: '#FAFAFA' }}>
+    <div className="min-h-screen flex flex-col items-center justify-center px-12 md:px-24 py-20 relative" style={{ backgroundColor: '#F5EFE7' }}>
+      <div className="absolute top-8 text-5xl" style={{ color: '#D4AF37', opacity: 0.3 }}>✦</div>
+      
       <motion.h2
-        className="font-script text-6xl md:text-7xl mb-6 text-center"
-        style={{ color: '#7B8F6E' }}
+        className="font-script text-5xl sm:text-6xl md:text-7xl mb-6 text-center"
+        style={{ color: '#5D4037' }}
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       >
-        Wedding Details
+        Mini Games! 🎮
       </motion.h2>
-      <div className="w-32 h-px mb-6" style={{ backgroundColor: '#9CA986' }} />
-      <p className="text-sm font-light tracking-ultra uppercase mb-12 text-center" style={{ color: '#2C2C2C' }}>Help me choose</p>
+      <div className="flex gap-2 items-center mb-6">
+        <div className="w-12 h-px" style={{ backgroundColor: '#D4AF37' }} />
+        <div className="text-xl" style={{ color: '#D4AF37' }}>✦</div>
+        <div className="w-12 h-px" style={{ backgroundColor: '#D4AF37' }} />
+      </div>
+      <p className="text-sm sm:text-base font-serif font-semibold mb-12 text-center" style={{ color: '#3E2723' }}>Tulungan mo ako pumili! 😊</p>
 
       <AnimatePresence mode="wait">
         {/* Stage 0: Dress Selection */}
@@ -64,16 +70,16 @@ export default function RoleQuest({ onComplete }: RoleQuestProps) {
             exit={{ opacity: 0, y: -20 }}
             className="text-center"
           >
-            <Shirt className="w-12 h-12 mx-auto mb-8" style={{ color: '#7B8F6E' }} />
-            <h3 className="text-sm font-light tracking-ultra uppercase mb-12" style={{ color: '#2C2C2C' }}>Pick a dress style</h3>
+            <Shirt className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-8" style={{ color: '#5D4037' }} />
+            <h3 className="text-base sm:text-lg font-serif font-bold mb-12" style={{ color: '#3E2723' }}>Anong dress style bet mo? 👗</h3>
             <div className="flex gap-8 justify-center">
               {dresses.map((dress, idx) => (
                 <motion.button
                   key={idx}
                   onClick={() => handleDressSelect(idx)}
-                  className="text-7xl p-10 bg-white transition-all"
-                  style={{ border: '1px solid #E5E5E5' }}
-                  whileHover={{ borderColor: '#7B8F6E', borderWidth: '2px' }}
+                  className="text-7xl p-10 textured-bg transition-all"
+                  style={{ backgroundColor: '#FFFFFF', border: '2px solid #E8DCC4' }}
+                  whileHover={{ borderColor: '#D4AF37', borderWidth: '3px' }}
                   whileTap={{ scale: 0.95 }}
                 >
                   {dress}
@@ -92,8 +98,8 @@ export default function RoleQuest({ onComplete }: RoleQuestProps) {
             exit={{ opacity: 0, y: -20 }}
             className="text-center"
           >
-            <Flower2 className="w-12 h-12 mx-auto mb-8" style={{ color: '#7B8F6E' }} />
-            <h3 className="text-sm font-light tracking-ultra uppercase mb-12" style={{ color: '#2C2C2C' }}>Choose your favorite flower</h3>
+            <Flower2 className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-8" style={{ color: '#5D4037' }} />
+            <h3 className="text-base sm:text-lg font-serif font-bold mb-12" style={{ color: '#3E2723' }}>Anong bulaklak ang paborito mo? 🌺</h3>
             <div className="flex gap-8 justify-center">
               {flowers.map((flower, idx) => (
                 <motion.button
@@ -120,8 +126,8 @@ export default function RoleQuest({ onComplete }: RoleQuestProps) {
             exit={{ opacity: 0, y: -20 }}
             className="text-center"
           >
-            <PartyPopper className="w-12 h-12 mx-auto mb-8" style={{ color: '#7B8F6E' }} />
-            <h3 className="text-sm font-light tracking-ultra uppercase mb-12" style={{ color: '#2C2C2C' }}>Pop the balloons</h3>
+            <PartyPopper className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-8" style={{ color: '#5D4037' }} />
+            <h3 className="text-base sm:text-lg font-serif font-bold mb-12" style={{ color: '#3E2723' }}>Pasabugin ang mga lobo! 🎈</h3>
             <div className="flex gap-6 justify-center flex-wrap max-w-md">
               {balloons.map((balloon) => (
                 <motion.button
@@ -178,34 +184,36 @@ export default function RoleQuest({ onComplete }: RoleQuestProps) {
             >
               🔓
             </motion.div>
-            <h3 className="text-sm font-light tracking-ultra uppercase mb-6" style={{ color: '#2C2C2C' }}>
-              You Unlocked:
+            <h3 className="text-base sm:text-lg font-serif font-bold mb-6" style={{ color: '#3E2723' }}>
+              Na-unlock mo:
             </h3>
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="font-script text-6xl mb-12"
-              style={{ color: '#7B8F6E' }}
+              className="font-script text-5xl sm:text-6xl mb-12"
+              style={{ color: '#5D4037' }}
             >
-              Bridesmaid 💖
+              Bridesmaid Role! 💕
             </motion.div>
             <motion.button
               onClick={onComplete}
-              className="px-12 py-3 font-sans font-light text-sm tracking-ultra uppercase transition-all duration-300"
+              className="px-10 sm:px-12 py-3 sm:py-4 font-serif font-bold text-sm sm:text-base transition-all duration-300"
               style={{ 
-                color: '#2C2C2C',
-                borderBottom: '1px solid #7B8F6E'
+                backgroundColor: '#5D4037',
+                color: '#F5EFE7',
+                border: '2px solid #D4AF37'
               }}
               whileHover={{ 
-                borderBottomWidth: '2px',
-                letterSpacing: '0.3em'
+                backgroundColor: '#6F4E37',
+                scale: 1.05
               }}
+              whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              Continue
+              Tara Na! 🚀
             </motion.button>
           </motion.div>
         )}
