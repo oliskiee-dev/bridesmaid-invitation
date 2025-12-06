@@ -113,31 +113,31 @@ export default function FlowerGame({ onComplete }: FlowerGameProps) {
 
   return (
     <div 
-      className="min-h-screen flex flex-col items-center justify-center px-6 py-12 relative overflow-hidden"
+      className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 py-8 sm:py-12 relative overflow-hidden touch-none"
       style={{ backgroundColor: '#FAFAFA' }}
     >
       {!gameStarted ? (
         <motion.div
-          className="text-center z-10"
+          className="text-center z-10 max-w-md"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
         >
           <motion.h2
-            className="font-script text-6xl md:text-7xl mb-6"
+            className="font-script text-5xl sm:text-6xl md:text-7xl mb-6"
             style={{ color: '#7B8F6E' }}
           >
             Flower Catcher
           </motion.h2>
-          <div className="w-32 h-px mx-auto mb-8" style={{ backgroundColor: '#9CA986' }} />
-          <p className="text-base font-light mb-4" style={{ color: '#2C2C2C' }}>
-            Move your mouse to catch falling flowers!
+          <div className="w-24 sm:w-32 h-px mx-auto mb-6 sm:mb-8" style={{ backgroundColor: '#9CA986' }} />
+          <p className="text-sm sm:text-base font-light mb-3 sm:mb-4 px-4" style={{ color: '#2C2C2C' }}>
+            Move your finger or mouse to catch falling flowers!
           </p>
-          <p className="text-sm font-light mb-12" style={{ color: '#7B8F6E' }}>
+          <p className="text-xs sm:text-sm font-light mb-8 sm:mb-12" style={{ color: '#7B8F6E' }}>
             Collect {targetScore} flowers to continue
           </p>
           <motion.button
             onClick={() => setGameStarted(true)}
-            className="px-12 py-4 font-sans font-light text-sm tracking-ultra uppercase bg-white transition-all duration-300"
+            className="px-8 sm:px-12 py-3 sm:py-4 font-sans font-light text-xs sm:text-sm tracking-ultra uppercase bg-white transition-all duration-300 touch-manipulation"
             style={{ 
               border: '1px solid #7B8F6E',
               color: '#2C2C2C'
@@ -156,15 +156,15 @@ export default function FlowerGame({ onComplete }: FlowerGameProps) {
         <>
           {/* Score Display */}
           <motion.div
-            className="absolute top-8 left-1/2 transform -translate-x-1/2 z-20"
+            className="absolute top-4 sm:top-8 left-1/2 transform -translate-x-1/2 z-20"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
           >
             <div className="text-center">
-              <p className="text-sm font-light tracking-ultra uppercase mb-2" style={{ color: '#2C2C2C' }}>
+              <p className="text-xs sm:text-sm font-light tracking-ultra uppercase mb-1 sm:mb-2" style={{ color: '#2C2C2C' }}>
                 Flowers Collected
               </p>
-              <p className="font-script text-5xl" style={{ color: '#7B8F6E' }}>
+              <p className="font-script text-4xl sm:text-5xl" style={{ color: '#7B8F6E' }}>
                 {score} / {targetScore}
               </p>
             </div>
@@ -191,7 +191,7 @@ export default function FlowerGame({ onComplete }: FlowerGameProps) {
 
           {/* Basket */}
           <motion.div
-            className="absolute bottom-20 text-7xl pointer-events-none z-10"
+            className="absolute bottom-16 sm:bottom-20 text-6xl sm:text-7xl pointer-events-none z-10"
             style={{
               left: `${basketX}%`,
               transform: 'translateX(-50%)',

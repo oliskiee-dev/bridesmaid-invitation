@@ -8,16 +8,16 @@ interface LandingSectionProps {
 
 export default function LandingSection({ onBegin }: LandingSectionProps) {
   return (
-    <div className="min-h-screen flex items-center justify-center px-12 md:px-24 py-16" style={{ backgroundColor: '#FAFAFA' }}>
+    <div className="min-h-screen flex items-center justify-center px-6 sm:px-12 md:px-24 py-12 sm:py-16" style={{ backgroundColor: '#FAFAFA' }}>
       <motion.div
-        className="max-w-4xl w-full text-center space-y-16"
+        className="max-w-4xl w-full text-center space-y-12 sm:space-y-16"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
-        <div className="space-y-12">
+        <div className="space-y-8 sm:space-y-12">
           <motion.h1 
-            className="font-script text-7xl md:text-8xl tracking-wide"
+            className="font-script text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-wide px-4"
             style={{ color: '#7B8F6E' }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -26,9 +26,9 @@ export default function LandingSection({ onBegin }: LandingSectionProps) {
             A Special Invitation
           </motion.h1>
           
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             <motion.h2 
-              className="text-xl md:text-2xl font-sans font-light tracking-ultra uppercase"
+              className="text-base sm:text-xl md:text-2xl font-sans font-light tracking-ultra uppercase px-4"
               style={{ color: '#2C2C2C' }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -49,7 +49,7 @@ export default function LandingSection({ onBegin }: LandingSectionProps) {
         
         <motion.button
           onClick={onBegin}
-          className="mt-16 px-16 py-4 font-sans font-light text-sm tracking-ultra uppercase transition-all duration-300"
+          className="mt-12 sm:mt-16 px-10 sm:px-16 py-3 sm:py-4 font-sans font-light text-xs sm:text-sm tracking-ultra uppercase transition-all duration-300 touch-manipulation"
           style={{ 
             color: '#2C2C2C',
             borderBottom: '1px solid #7B8F6E'

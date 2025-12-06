@@ -21,35 +21,35 @@ export default function PersonalMessage({ onAccept }: PersonalMessageProps) {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-12 md:px-24 py-20" style={{ backgroundColor: '#FAFAFA' }}>
+    <div className="min-h-screen flex flex-col items-center justify-center px-6 sm:px-12 md:px-24 py-12 sm:py-20" style={{ backgroundColor: '#FAFAFA' }}>
       {!showResponse ? (
         <motion.div
-          className="max-w-3xl text-center space-y-16"
+          className="max-w-3xl text-center space-y-10 sm:space-y-16 px-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
           <motion.div
-            className="bg-white p-16 md:p-20"
+            className="bg-white p-8 sm:p-16 md:p-20"
             style={{ borderLeft: '3px solid #7B8F6E' }}
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
           >
-            <Heart className="w-12 h-12 mx-auto mb-10" style={{ color: '#7B8F6E' }} />
+            <Heart className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-6 sm:mb-10" style={{ color: '#7B8F6E' }} />
             
-            <p className="text-xl md:text-2xl font-light leading-relaxed mb-10 text-center" style={{ color: '#2C2C2C' }}>
+            <p className="text-lg sm:text-xl md:text-2xl font-light leading-relaxed mb-6 sm:mb-10 text-center" style={{ color: '#2C2C2C' }}>
               I couldn&apos;t imagine walking down the aisle without you.
             </p>
             
-            <p className="text-base font-light leading-relaxed mb-10" style={{ color: '#2C2C2C' }}>
+            <p className="text-sm sm:text-base font-light leading-relaxed mb-6 sm:mb-10" style={{ color: '#2C2C2C' }}>
               Thank you for being a part of my life.
             </p>
             
-            <p className="font-script text-5xl" style={{ color: '#7B8F6E' }}>
+            <p className="font-script text-4xl sm:text-5xl" style={{ color: '#7B8F6E' }}>
               Say yes?
             </p>
           </motion.div>
 
-          <div className="flex flex-col sm:flex-row gap-8 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center">
             <motion.button
               onClick={() => handleResponse('yes')}
               className="px-12 py-3 font-sans font-light text-sm tracking-ultra uppercase transition-all duration-300"

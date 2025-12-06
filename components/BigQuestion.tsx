@@ -21,17 +21,17 @@ export default function BigQuestion({ onReveal }: BigQuestionProps) {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-12 md:px-24 py-20" style={{ backgroundColor: '#FAFAFA' }}>
+    <div className="min-h-screen flex flex-col items-center justify-center px-6 sm:px-12 md:px-24 py-12 sm:py-20" style={{ backgroundColor: '#FAFAFA' }}>
       {showConfetti && <Confetti />}
       
       {!revealed ? (
         <motion.div
-          className="text-center space-y-16"
+          className="text-center space-y-12 sm:space-y-16 px-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
           <motion.p
-            className="text-lg font-light tracking-wide"
+            className="text-base sm:text-lg font-light tracking-wide"
             style={{ color: '#2C2C2C' }}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ export default function BigQuestion({ onReveal }: BigQuestionProps) {
 
           <motion.button
             onClick={handleReveal}
-            className="px-16 py-4 font-sans font-light text-sm tracking-ultra uppercase transition-all duration-300 inline-flex items-center gap-3"
+            className="px-8 sm:px-16 py-3 sm:py-4 font-sans font-light text-xs sm:text-sm tracking-ultra uppercase transition-all duration-300 inline-flex items-center gap-2 sm:gap-3 touch-manipulation"
             style={{ 
               color: '#2C2C2C',
               borderBottom: '1px solid #7B8F6E'
@@ -53,7 +53,7 @@ export default function BigQuestion({ onReveal }: BigQuestionProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
-            <Gift className="w-5 h-5" />
+            <Gift className="w-4 h-4 sm:w-5 sm:h-5" />
             Reveal the Question
           </motion.button>
         </motion.div>
